@@ -4,6 +4,8 @@ variable "vpc_cidr" {
   default     = "10.0.0.0/16"
 }
 
+// Number of public subnets and private subnets here must be the same. Will improve later
+// for differenct number of public and private subnets
 variable "public_subnet_cidrs" {
   type        = list(string)
   description = "Public Subnet CIDR values"
@@ -19,4 +21,8 @@ variable "private_subnet_cidrs" {
 variable "availability_zones" {
   type    = list(string)
   default = ["us-east-1a", "us-east-1b", "us-east-1c"]
+}
+
+variable "common_tags" {
+  type = map(string)
 }
